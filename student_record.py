@@ -107,12 +107,14 @@ while True:
             json.dump(student_list,f)
             print("Data Saved")
     elif ch==7:
-        with open("student.json","r") as f:
+        if os.path.exists("student.json"):
+          with open("student.json","r") as f:
             data=json.load(f)
             student_list.clear()
             student_list.extend(data)
             print("Data Loaded Successfully")
-        
+        else:
+            print("No saved file found")
        
   except ValueError:
       print("Please enter only numbers")
