@@ -109,7 +109,8 @@ while True:
     elif ch==7:
         with open("student.json","r") as f:
             data=json.load(f)
-            student_list=data
+            student_list.clear()
+            student_list.extend(data)
             print("Data Loaded Successfully")
         
        
